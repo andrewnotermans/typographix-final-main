@@ -15,6 +15,14 @@
     width: 100%;
 }
 
+%article {
+  flex: 1;
+  margin: 0 15px;
+  background: var(--background-alt);
+  padding: 20px;
+  border-radius: 5px;
+}
+
 // Minins for common styles
 @mixin flex-center {
     display: flex;
