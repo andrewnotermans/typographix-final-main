@@ -27,11 +27,15 @@ document.addEventListener('DOMContentLoaded', () => {
 // Navigation ----------------------------------------
 const nav = document.getElementById('nav');
 const menuIcon = document.querySelector('.menu-icon');
+const listItems = document.querySelectorAll('#nav ul li a');
 
 
 function toggleMenu() {
   nav.classList.toggle('active');
   menuIcon.classList.toggle('active');
+  listItems.forEach((listItem) => {
+    listItem.classList.toggle('active');
+  })
 }
 
 function hideMenu() {
