@@ -21,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
   createObserver('#about .phrase', { root: null, threshold: 1 }, 'active');
   createObserver('#gallery .image-box', { root: null, threshold: 1 }, 'active');
   createObserver('#blog .featured-articles, #blog .article', {root: null, threshold: 0.3 }, 'fadeInUp');
+  createObserver('#contact > div', {root: null, threshold: 0.7 }, 'fadeInUp');
 });
 
 // Navigation ----------------------------------------
