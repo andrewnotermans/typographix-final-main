@@ -9,7 +9,10 @@
   top: 0;
   z-index: 10;
   height: 60px;
-
+  
+  @include tablet-horizontal-large {
+    background: $background;
+  }
 
   .nav-left {
     h1 {
@@ -17,12 +20,20 @@
       color: darken($nav-font-color, 20%);
       font-weight: 300;
 
+      @include tablet-horizontal-large {
+        font-size: 2.5rem;
+      }
+
       span {
         color: lighten($nav-font-color, 10%);
         font-weight: 600;
         margin: 0 5px;
         position: relative;
         top: 5px;
+
+        @include tablet-horizontal-large {
+          top: 2.5px;
+        }
       }
     }
   }
@@ -107,6 +118,10 @@
       transform: translateY(-100%);
       transition: transform 0.5s ease;
   
+      @include smartphone-horizontal {
+        top: 5%;
+      }
+  
       li {
         margin: 1rem 0;
         opacity: 0;
@@ -130,6 +145,21 @@
             border-bottom: 1px solid $nav-font-color;
           }
   
+          @include tablet-horizontal {
+            font-size: 3rem;
+          }
+    
+          @include smartphone-vertical {
+            font-size: 3rem;
+          }
+    
+          @include smartphone-small {
+            font-size: 2.5rem;
+          }
+  
+          @include smartphone-horizontal {
+            font-size: 1.5rem;
+          }
         }
       }
     }

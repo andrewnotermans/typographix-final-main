@@ -9,8 +9,8 @@
 
 .overlay, .video-container video {
   position: fixed;
-  top: 0;
   left: 0;
+  top: 0;
   height: 100%;
   width: 100%;
 }
@@ -18,7 +18,7 @@
 #blog .blog-container .smaller-articles .article {
   flex: 1;
   margin: 0 15px;
-  background: var(--background-alt);
+  background: rgb(31, 31, 31);
   padding: 20px;
   border-radius: 5px;
 }
@@ -31,13 +31,13 @@
 }
 
 #contact .contact-container .form-container form .message textarea, #contact .contact-container .form-container form .grid-container .form-group input {
-  background: #525252;
+  background-color: #525252;
   border: none;
   border-radius: 8px;
   padding: 15px;
   color: white;
-  font-size: inherit;
   font-family: inherit;
+  font-size: inherit;
 }
 
 .fadeInUp {
@@ -84,10 +84,20 @@ body {
   z-index: 10;
   height: 60px;
 }
+@media (max-width: 1367px) {
+  .nav-wrapper {
+    background: rgb(18, 18, 18);
+  }
+}
 .nav-wrapper .nav-left h1 {
   font-size: 3rem;
   color: #b3b3b3;
   font-weight: 300;
+}
+@media (max-width: 1367px) {
+  .nav-wrapper .nav-left h1 {
+    font-size: 2.5rem;
+  }
 }
 .nav-wrapper .nav-left h1 span {
   color: white;
@@ -95,6 +105,11 @@ body {
   margin: 0 5px;
   position: relative;
   top: 5px;
+}
+@media (max-width: 1367px) {
+  .nav-wrapper .nav-left h1 span {
+    top: 2.5px;
+  }
 }
 .nav-wrapper .nav-right .menu-icon {
   position: absolute;
@@ -180,6 +195,11 @@ body {
   transform: translateY(-100%);
   transition: transform 0.5s ease;
 }
+@media (orientation: landscape) and (max-height: 450px) {
+  .nav-wrapper #nav ul {
+    top: 5%;
+  }
+}
 .nav-wrapper #nav ul li {
   margin: 1rem 0;
   opacity: 0;
@@ -211,6 +231,26 @@ body {
   padding-bottom: 10px;
   border-bottom: 1px solid rgb(230, 230, 230);
 }
+@media (orientation: landscape) and (max-width: 1181px) {
+  .nav-wrapper #nav ul li a {
+    font-size: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .nav-wrapper #nav ul li a {
+    font-size: 3rem;
+  }
+}
+@media (orientation: portrait) and (max-height: 700px) {
+  .nav-wrapper #nav ul li a {
+    font-size: 2.5rem;
+  }
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  .nav-wrapper #nav ul li a {
+    font-size: 1.5rem;
+  }
+}
 .nav-wrapper #nav.active ul {
   transform: translateY(0);
 }
@@ -218,7 +258,7 @@ body {
   opacity: 1;
 }
 
-/* Home Section ------------------------------- */
+/* Home Section ----------------------- */
 .video-container {
   position: relative;
   z-index: -1;
@@ -251,6 +291,16 @@ body {
     color: white;
   }
 }
+@media (orientation: portrait) and (max-width: 1025px) {
+  .overlay h1 {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 600px) {
+  .overlay h1 {
+    font-size: 3.5rem;
+  }
+}
 .overlay p {
   color: white;
   position: relative;
@@ -259,9 +309,15 @@ body {
   font-weight: 200;
 }
 
-/* About Section ----------------------------- */
+/* About Section ---------------------- */
 #about {
   height: 100vh;
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  #about {
+    padding-top: 10vh;
+    padding-bottom: 50vh;
+  }
 }
 #about .about-container {
   display: grid;
@@ -272,10 +328,32 @@ body {
 #about .about-container h2 {
   font-size: clamp(2rem, 5vw, 3rem);
 }
+@media (orientation: landscape) and (max-width: 1181px) {
+  #about .about-container h2 {
+    margin-left: 5%;
+  }
+}
+@media (orientation: portrait) and (max-width: 1025px) {
+  #about .about-container h2 {
+    margin-left: 5%;
+  }
+}
 #about .about-container p {
   width: 75ch;
   font-size: clamp(1rem, 5vw, 1.5rem);
   line-height: 1.8;
+}
+@media (orientation: landscape) and (max-width: 1181px) {
+  #about .about-container p {
+    width: 90%;
+    margin-left: 5%;
+  }
+}
+@media (orientation: portrait) and (max-width: 1025px) {
+  #about .about-container p {
+    width: 90%;
+    margin-left: 5%;
+  }
 }
 #about .about-container .phrase {
   color: #636363;
@@ -319,6 +397,11 @@ body {
   height: 100vh;
   position: relative;
   top: 50px;
+}
+@media (max-width: 1367px) {
+  #gallery .gallery-container {
+    margin: 0 2.5%;
+  }
 }
 #gallery .image-box {
   width: 300px;
@@ -398,6 +481,12 @@ body {
   width: 80%;
   padding: 50px;
 }
+@media (max-width: 1367px) {
+  #blog .blog-container {
+    width: 90%;
+    padding: 5%;
+  }
+}
 #blog .blog-container a {
   text-decoration: none;
   color: hsl(225, 100%, 75%);
@@ -415,30 +504,96 @@ body {
   color: rgb(200, 200, 200);
   margin: 15px 0;
 }
+@media (orientation: portrait) and (max-width: 1025px) {
+  #blog .blog-container .featured-article h3 {
+    font-size: 2.2rem;
+  }
+}
+@media (max-width: 600px) {
+  #blog .blog-container .featured-article h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  #blog .blog-container .featured-article h3 {
+    font-size: 2rem;
+  }
+}
 #blog .blog-container .featured-article p {
   font-size: 1.2rem;
   margin-bottom: 20px;
+}
+@media (max-width: 600px) {
+  #blog .blog-container .featured-article p {
+    font-size: 1rem;
+  }
 }
 #blog .blog-container .smaller-articles {
   display: flex;
   justify-content: space-between;
 }
+@media (orientation: portrait) and (max-width: 1025px) {
+  #blog .blog-container .smaller-articles {
+    flex-direction: column;
+  }
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  #blog .blog-container .smaller-articles {
+    flex-direction: column;
+  }
+}
 #blog .blog-container .smaller-articles .article {
   opacity: 0;
+}
+@media (orientation: portrait) and (max-width: 1025px) {
+  #blog .blog-container .smaller-articles .article {
+    margin-bottom: 20px;
+  }
+}
+@media (max-width: 600px) {
+  #blog .blog-container .smaller-articles .article {
+    margin: 0;
+    margin-bottom: 20px;
+  }
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  #blog .blog-container .smaller-articles .article {
+    margin-bottom: 20px;
+  }
 }
 #blog .blog-container .smaller-articles .article h3 {
   font-size: 1.8rem;
   color: rgb(200, 200, 200);
   margin: 15px 0;
 }
+@media (orientation: landscape) and (max-width: 1181px) {
+  #blog .blog-container .smaller-articles .article h3 {
+    font-size: 1.4rem;
+  }
+}
+@media (orientation: portrait) and (max-width: 1025px) {
+  #blog .blog-container .smaller-articles .article h3 {
+    font-size: 1.7rem;
+  }
+}
+@media (max-width: 600px) {
+  #blog .blog-container .smaller-articles .article h3 {
+    font-size: 1.3rem;
+  }
+}
 #blog .blog-container .smaller-articles .article p {
   font-size: 1rem;
+}
+@media (orientation: landscape) and (max-width: 1181px) {
+  #blog .blog-container .smaller-articles .article p {
+    font-size: 0.9rem;
+  }
 }
 #blog .blog-container .smaller-articles .article img {
   min-height: 300px;
 }
 
-/* Contact Section ----------------------- */
+/* Contact Section -------------------- */
 #contact {
   display: grid;
   place-items: center;
@@ -446,11 +601,26 @@ body {
 #contact .contact-container {
   opacity: 0;
 }
+@media (max-width: 600px) {
+  #contact .contact-container {
+    padding-top: 5vh;
+  }
+}
+@media (orientation: portrait) and (max-height: 700px) {
+  #contact .contact-container {
+    padding-top: 10vh;
+  }
+}
+@media (orientation: landscape) and (max-height: 450px) {
+  #contact .contact-container {
+    padding-top: 15vh;
+  }
+}
 #contact .contact-container h2 {
   font-size: clamp(2rem, 5vw, 3rem);
 }
 #contact .contact-container .form-container {
-  background: rgb(31, 31, 31);
+  background-color: rgb(31, 31, 31);
   padding: 20px;
   width: 80vw;
   margin: 0 auto;
@@ -462,6 +632,12 @@ body {
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
+@media (max-width: 600px) {
+  #contact .contact-container .form-container form .grid-container {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+}
 #contact .contact-container .form-container form .grid-container .form-group {
   display: flex;
   flex-direction: column;
@@ -472,7 +648,7 @@ body {
 }
 #contact .contact-container .form-container form .grid-container .form-group input:focus {
   outline: none;
-  background: rgb(56.5, 56.5, 56.5);
+  background-color: rgb(56.5, 56.5, 56.5);
 }
 #contact .contact-container .form-container form .message label {
   position: relative;
@@ -486,28 +662,38 @@ body {
   height: 200px;
   resize: vertical;
 }
+@media (orientation: landscape) and (max-height: 450px) {
+  #contact .contact-container .form-container form .message textarea {
+    height: 100px;
+  }
+}
+@media (orientation: portrait) and (max-height: 700px) {
+  #contact .contact-container .form-container form .message textarea {
+    height: 100px;
+  }
+}
 #contact .contact-container .form-container form .message textarea:focus {
   outline: none;
-  background: rgb(56.5, 56.5, 56.5);
+  background-color: rgb(56.5, 56.5, 56.5);
 }
 #contact .contact-container .form-container form button {
   width: 100%;
   padding: 15px;
-  background: rgb(158.5, 158.5, 158.5);
-  border: none;
+  background-color: rgb(158.5, 158.5, 158.5);
   border-radius: 25px;
   color: rgb(18, 18, 18);
   font-size: 1.2rem;
+  border: none;
   cursor: pointer;
+  transition: background-color 0.3s;
   margin-top: 20px;
-  transition: background-color 0.3s, color 0.3s;
 }
 #contact .contact-container .form-container form button:hover {
-  background: rgb(56.5, 56.5, 56.5);
+  background-color: rgb(56.5, 56.5, 56.5);
   color: rgb(200, 200, 200);
 }
 
-/* Footer Section  ------------------------------ */
+/* Footer Section --------------------- */
 footer {
   display: flex;
   align-items: center;
