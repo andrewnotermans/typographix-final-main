@@ -1,10 +1,10 @@
-// Import SCSS partials
-@import './layout/navbar';
-@import './layout/home';
-@import './layout/about';
-@import './layout/gallery';
-@import './layout/blog';
-@import './layout/contact';
-@import './layout/footer';
-@import './layout/toast';
+// Forward SCSS partials
+@forward './layout/navbar';
+@forward './layout/home';
+@forward './layout/about';
+@forward './layout/gallery';
+@forward './layout/blog';
+@forward './layout/contact';
+@forward './layout/footer';
+@forward './layout/toast';
 

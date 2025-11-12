@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:color";
+
 /* Blog Section ----------------------- */
 #blog {
   @extend %section;
@@ -19,13 +23,13 @@
       transition: color 0.3s;
   
       &:hover {
-        color: darken($primary-color, 20%);
+        color: color.adjust($primary-color, $lightness: -20%);
       }
     }
 
     .featured-article {
       margin-bottom: 50px;
-      opacity: 0;
+      opacity: 1;
     
       h3 {
         @include blog-title(2.5rem);
@@ -71,7 +75,7 @@
     
       .article {
         @extend %article;
-        opacity: 0;
+        opacity: 1;
 
         @include tablet-vertical {
           margin-bottom: 20px;

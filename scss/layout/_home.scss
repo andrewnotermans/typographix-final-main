@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:color";
+
 /* Home Section ----------------------- */
 .video-container {
     position: relative;
@@ -28,7 +32,7 @@
 
         @keyframes colorChange {
             from {
-                color: darken($primary-font-color, 20%);
+                color: color.adjust($primary-font-color, $lightness: -20%);
             }
             to {
                 color: white;

@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:color";
+
 /* Contact Section -------------------- */
 #contact {
     @extend %section;
@@ -55,7 +59,7 @@
                             @extend %contact-input;
                             &:focus {
                                 outline: none;
-                                background-color: darken($input-bg, 10%);
+                                background-color: color.adjust($input-bg, $lightness: -10%);
                             }
                         }
                     }
@@ -86,7 +90,7 @@
         
                         &:focus {
                             outline: none;
-                            background-color: darken($input-bg, 10%);
+                            background-color: color.adjust($input-bg, $lightness: -10%);
                         }
                     }
                 }
@@ -94,7 +98,7 @@
                 button {
                     width: 100%;
                     padding: 15px;
-                    background-color: lighten($input-bg, 30%);
+                    background-color: color.adjust($input-bg, $lightness: 30%);
                     border-radius: 25px;
                     color: $background;
                     font-size: 1.2rem;
@@ -104,7 +108,7 @@
                     margin-top: 20px;
     
                     &:hover {
-                        background-color: darken($input-bg, 10%);
+                        background-color: color.adjust($input-bg, $lightness: -10%);
                         color: $secondary-font-color;
                     }
                 }

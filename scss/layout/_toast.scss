@@ -1,3 +1,6 @@
+@use "../variables" as *;
+@use "sass:color";
+
 .toast-container {
     display: flex;
     justify-content: center;
@@ -8,7 +11,7 @@
 .toast {
     visibility: hidden;
     min-width: 250px;
-    background: darken($primary-font-color, 20%);
+    background: color.adjust($primary-font-color, $lightness: -20%);
     color: white;
     text-align: center;
     border-radius: 8px;

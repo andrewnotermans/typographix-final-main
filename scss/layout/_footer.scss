@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:color";
+
 /* Footer Section --------------------- */
 footer {
     @include flex-center(column);
@@ -17,7 +21,7 @@ footer {
         font-size: 1.5rem;
   
         &:hover {
-          color: lighten($secondary-font-color, 20%);
+          color: color.adjust($secondary-font-color, $lightness: 20%);
         }
       }
     }

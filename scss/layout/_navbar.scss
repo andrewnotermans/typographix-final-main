@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:color";
+
 /* Nav Section ------------------------ */
 .nav-wrapper {
   display: flex;
@@ -17,7 +21,7 @@
   .nav-left {
     h1 {
       font-size: 3rem;
-      color: darken($nav-font-color, 20%);
+      color: color.adjust($nav-font-color, $lightness: -20%);
       font-weight: 300;
 
       @include tablet-horizontal-large {
@@ -25,7 +29,7 @@
       }
 
       span {
-        color: lighten($nav-font-color, 10%);
+        color: color.adjust($nav-font-color, $lightness: 10%);
         font-weight: 600;
         margin: 0 5px;
         position: relative;
@@ -85,7 +89,7 @@
       top: 0;
       bottom: 0;
       width: 20%;
-      background: lighten($background, 10%);
+      background: color.adjust($background, $lightness: 10%);
       transform: translateY(-100%);
       transition: transform 0.5s ease;
       z-index: 1;

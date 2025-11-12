@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../mixins" as *;
+@use "sass:color";
+
 /* About Section ---------------------- */
 #about {
     @extend %section;
@@ -43,7 +47,7 @@
         }
 
         .phrase {
-            color: darken($primary-font-color, 20%);
+            color: color.adjust($primary-font-color, $lightness: -20%);
             transition-property: color;
             transition-timing-function: ease;
           
@@ -54,7 +58,7 @@
             }
           
             &.active {
-                color: lighten($primary-font-color, 20%);
+                color: color.adjust($primary-font-color, $lightness: 20%);
             }
         }
     }
