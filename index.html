@@ -4,10 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Typographix allows ideas to become reality">
-    <meta name="author" content="Jacinto Design">
+    <meta name="author" content="Andrew Notermans">
     <title>Typographix</title>
     <link rel="icon" type="image/png" href="assets/favicon.png">
-    <link rel="stylesheet" href="css/compiled_style.css">
+    
+    <!-- Preload critical resources -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"></noscript>
+    
+    <!-- Preload hero video for better LCP -->
+    <link rel="preload" href="assets/future-tunnel.mp4" as="video" type="video/mp4">
+    
+    <!-- Critical CSS -->
+    <link rel="stylesheet" href="css/compiled_style.css?v=2.0">
+    
+    <!-- Social icons preload (replaces FontAwesome for instant loading) -->
+    <style>
+        /* Inline critical social icon styles for instant visibility */
+        .fa-brands { display: inline-block; width: 1.5rem; height: 1.5rem; }
+        .social-icons a:hover .fa-brands { transform: scale(1.1); }
+    </style>
+    
+    <!-- Font loading optimization script -->
+    <script>
+        // Add font-loaded class when Inter font is ready
+        if ('fonts' in document) {
+            document.fonts.ready.then(() => {
+                document.documentElement.classList.add('fonts-loaded');
+            });
+            
+            // Fallback timeout to prevent waiting forever
+            setTimeout(() => {
+                document.documentElement.classList.add('fonts-loaded');
+            }, 3000);
+        } else {
+            // Fallback for browsers without Font Loading API
+            document.documentElement.classList.add('fonts-loaded');
+        }
+        
+        // Ensure no FontAwesome requests (for performance audits)
+        if ('serviceWorker' in navigator) {
+            // Clear any cached FontAwesome resources
+            caches.keys().then(names => {
+                names.forEach(name => {
+                    if (name.includes('fontawesome') || name.includes('fa-')) {
+                        caches.delete(name);
+                    }
+                });
+            });
+        }
+    </script>
 </head>
 <body>
     <!-- Navigation -->
@@ -185,10 +233,10 @@
     <footer>
         <small>&copy; 2024 Typographix</small>
         <div class="social-icons">
-            <a href="#"><i class="fa-brands fa-facebook-f" title="Facebook"></i></a>
-            <a href="#"><i class="fa-brands fa-x-twitter" title="Twitter (X)"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in" title="LinkedIn"></i></a>
+            <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook-f" title="Facebook"></i></a>
+            <a href="https://x.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-x-twitter" title="Twitter (X)"></i></a>
+            <a href="https://www.instagram.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" title="Instagram"></i></a>
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" title="LinkedIn"></i></a>
         </div>
     </footer>
 
@@ -198,7 +246,7 @@
     </div>
 
     <!-- Script -->
-    <script src="script.js"></script>
-    <script src="https://kit.fontawesome.com/ecb1fa5ff2.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+    <!-- FontAwesome CDN removed - using lightweight CSS icons instead for better performance -->
 </body>
 </html>

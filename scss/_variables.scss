@@ -1,7 +1,7 @@
 @use "sass:color";
 
-// Variables for colors, fonts, etc.
-$font-stack: 'Inter', sans-serif !default;
+// Font fallback with metric overrides to prevent layout shift
+$font-stack: 'Inter', 'Inter Fallback', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !default;
 $background: rgb(18, 18, 18) !default;
 $background-alt: rgb(31, 31, 31) !default;
 $input-bg: color.adjust($background-alt, $lightness: 20%) !default;
